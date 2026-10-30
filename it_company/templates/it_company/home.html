@@ -1,45 +1,56 @@
+
 {% extends 'it_company/base.html' %}
 
 {% block content %}
 
-    <!-- HOME -->
-   
-<!-- HERO -->
-<section id="home" class="hero-section py-5">
+<!-- ================= HERO ================= -->
 
+<section id="home" class="scalla-hero">
     <div class="container">
 
-        <p class="text-uppercase text-muted">
-            IT Solutions for a Stronger Tomorrow
-        </p>
+        <div class="scalla-hero-grid">
 
-        <h1 class="display-4 fw-bold mb-4">
-            Reliable IT Infrastructure
-            for Your Business
-        </h1>
+            <!-- LEFT: TEXT -->
+            <div class="scalla-hero-content">
 
-        <p class="lead mb-4">
-            SCALLA delivers modern IT infrastructure,
-            secure network solutions and professional
-            technical support to help your business
-            grow without limits.
-        </p>
+                <p class="hero-eyebrow">
+                    IT SOLUTIONS FOR A STRONGER TOMORROW
+                </p>
 
-        <!-- BUTTONS -->
-        <div class="d-flex flex-wrap gap-3 mb-5">
+                <h1 class="hero-title">
+                    Reliable IT Infrastructure
+                    for Your Business
+                </h1>
 
-            <a href="#services" class="btn btn-dark btn-lg">
-                Our Services →
-            </a>
+                <p class="hero-description">
+                    SCALLA delivers modern IT infrastructure,
+                    secure network solutions and professional
+                    technical support to help your business
+                    grow without limits.
+                </p>
 
-            <a href="#contact" class="btn btn-outline-dark btn-lg">
-                Get in Touch →
-            </a>
+                <!-- BUTTONS -->
+                <div class="hero-actions">
+
+                    <a href="#services" class="btn btn-dark btn-lg">
+                        Our Services →
+                    </a>
+
+                    <a href="#contact" class="btn btn-outline-dark btn-lg">
+                        Get in Touch →
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- RIGHT: ANIMATED PYRAMID -->
+            {% include 'it_company/includes/scalla_animation.html' %}
 
         </div>
 
         <!-- STATISTICS -->
-        <div class="row g-4">
+        <div class="row g-4 mt-5 scalla-stats">
 
             <div class="col-md-4">
                 <h3 class="fw-bold">10+</h3>
@@ -59,20 +70,22 @@
         </div>
 
     </div>
-
 </section>
 
 
-    <!-- SERVICES -->
-    {% include 'it_company/services.html' %}
+<!-- ================= SERVICES ================= -->
+{% include 'it_company/services.html' %}
 
-    <!-- PROJECTS -->
-    {% include 'it_company/projects.html' %}
 
-    <!-- ABOUT -->
-    {% include 'it_company/about.html' %}
+<!-- ================= PROJECTS ================= -->
+{% include 'it_company/projects.html' %}
 
-    <!-- CONTACT -->
-    {% include 'it_company/contact.html' %}
+
+<!-- ================= ABOUT ================= -->
+{% include 'it_company/about.html' %}
+
+
+<!-- ================= CONTACT ================= -->
+{% include 'it_company/contact.html' %}
 
 {% endblock %}
