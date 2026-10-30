@@ -1,0 +1,78 @@
+{% extends 'it_company/base.html' %}
+
+{% block content %}
+
+    <!-- HOME -->
+   
+<!-- HERO -->
+<section id="home" class="hero-section py-5">
+
+    <div class="container">
+
+        <p class="text-uppercase text-muted">
+            IT Solutions for a Stronger Tomorrow
+        </p>
+
+        <h1 class="display-4 fw-bold mb-4">
+            Reliable IT Infrastructure
+            for Your Business
+        </h1>
+
+        <p class="lead mb-4">
+            SCALLA delivers modern IT infrastructure,
+            secure network solutions and professional
+            technical support to help your business
+            grow without limits.
+        </p>
+
+        <!-- BUTTONS -->
+        <div class="d-flex flex-wrap gap-3 mb-5">
+
+            <a href="#services" class="btn btn-dark btn-lg">
+                Our Services →
+            </a>
+
+            <a href="#contact" class="btn btn-outline-dark btn-lg">
+                Get in Touch →
+            </a>
+
+        </div>
+
+        <!-- STATISTICS -->
+        <div class="row g-4">
+
+            <div class="col-md-4">
+                <h3 class="fw-bold">10+</h3>
+                <p>Years of Experience</p>
+            </div>
+
+            <div class="col-md-4">
+                <h3 class="fw-bold">200+</h3>
+                <p>Successful Projects</p>
+            </div>
+
+            <div class="col-md-4">
+                <h3 class="fw-bold">99.9%</h3>
+                <p>Client Satisfaction</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+    <!-- SERVICES -->
+    {% include 'it_company/services.html' %}
+
+    <!-- PROJECTS -->
+    {% include 'it_company/projects.html' %}
+
+    <!-- ABOUT -->
+    {% include 'it_company/about.html' %}
+
+    <!-- CONTACT -->
+    {% include 'it_company/contact.html' %}
+
+{% endblock %}

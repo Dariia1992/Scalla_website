@@ -1,0 +1,52 @@
+
+<!-- PROJECTS -->
+<section id="projects" class="container py-5">
+
+    <h2 class="text-center mb-4">Our Projects</h2>
+
+    <p class="text-center text-muted mb-5">
+        Explore our IT projects and solutions.
+    </p>
+
+    <div class="row g-4">
+
+        {% for project in projects %}
+
+        <div class="col-md-6 col-lg-4">
+
+            <div class="card h-100">
+
+                <div class="card-body">
+
+                    <h3 class="h5 card-title">
+                        {{ project.title }}
+                    </h3>
+
+                    <p class="card-text">
+                        {{ project.description }}
+                    </p>
+
+                    {% if project.completed_at %}
+                    <p class="text-muted small">
+                        Completed:
+                        {{ project.completed_at|date:"F Y" }}
+                    </p>
+                    {% endif %}
+
+                </div>
+
+            </div>
+
+        </div>
+
+        {% empty %}
+
+        <p class="text-center">
+            Projects coming soon.
+        </p>
+
+        {% endfor %}
+
+    </div>
+
+</section>

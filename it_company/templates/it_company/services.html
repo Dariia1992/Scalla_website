@@ -1,0 +1,45 @@
+<!-- SERVICES -->
+
+<section id="services" class="container py-5">
+
+    <h2 class="text-center mb-4">Our Services</h2>
+
+    <p class="text-center text-muted mb-5">
+        Professional IT solutions for your business.
+    </p>
+
+    <div class="row g-4">
+
+        {% for service in services %}
+
+        <div class="col-md-6 col-lg-4">
+
+            <div class="card h-100">
+
+                <div class="card-body">
+
+                    <h3 class="h5 card-title">
+                        {{ service.name }}
+                    </h3>
+
+                    <p class="card-text">
+                        {{ service.description }}
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        {% empty %}
+
+        <p class="text-center">
+            No services available yet.
+        </p>
+
+        {% endfor %}
+
+    </div>
+
+</section>
