@@ -1,88 +1,100 @@
 
-<!-- CONTACT -->
-<section id="contact" class="container py-5">
+{% load static %}
 
-    <h2 class="text-center mb-3">
-        <p class="text-center text-uppercase text-muted">
-    Let's Work Together
-</p>
+<section id="contact" class="scalla-contact">
 
-<h2 class="text-center mb-3">
-    Ready to Transform Your IT Infrastructure?
-</h2>
+    <div class="container contact-layout">
 
-<p class="text-center mb-5">
-    Get in touch with our team and let's build
-    a smarter, more secure future for your business.
-</p>
-    </h2>
+        <!-- LEFT -->
+        <div class="contact-left">
 
-    <p class="text-center text-muted mb-5">
-        Contact SCALLA for professional IT solutions.
-    </p>
+            <p class="contact-kicker">
+                LET'S WORK TOGETHER
+            </p>
 
-    <div class="row justify-content-center">
+            <h2 class="contact-title">
+                Have a project
+                <span>in mind?</span>
+            </h2>
 
-        <div class="col-md-8 col-lg-6">
+            <p class="contact-lead">
+                Tell us about your IT needs and we'll
+                get back to you as soon as possible.
+                We're always open to new opportunities.
+            </p>
 
-            <form method="post" action="{% url 'home' %}#contact">
+            <div class="contact-rock-wrap">
+                <img
+                    class="contact-rock"
+                    src="{% static 'it_company/images/scalla_contact_rock.png' %}"
+                    alt="Natural rock with greenery"
+                >
+            </div>
 
-                {% csrf_token %}
+        </div>
 
-                {% for field in form %}
+        <!-- RIGHT -->
+        <div class="contact-right">
 
-                <div class="mb-3">
+            <div class="contact-form-box">
 
-                    <label for="{{ field.id_for_label }}"
-                           class="form-label">
-                        {{ field.label }}
-                    </label>
+                <h3>Send us a message</h3>
 
-                    {{ field }}
+                <p class="contact-form-description">
+                    Fill out the form and we'll get back to you.
+                </p>
 
-                    {% for error in field.errors %}
-                        <p class="text-danger small">
-                            {{ error }}
-                        </p>
-                    {% endfor %}
+                <form method="post" action="{% url 'home' %}#contact">
+                    {% csrf_token %}
 
-                </div>
+                    <div class="contact-fields">
 
-                {% endfor %}
+                        {% for field in form %}
 
-                <button type="submit" class="btn btn-dark w-100">
-                    Send Message
-                </button>
+                        <div class="contact-field {% if field.name == 'message' %}contact-field-full{% endif %}">
 
-            </form>
+                            <label
+                                for="{{ field.id_for_label }}"
+                                class="form-label"
+                            >
+                                {{ field.label }}
+                            </label>
+
+                            {{ field }}
+
+                            {% for error in field.errors %}
+                                <p class="text-danger small mt-2">
+                                    {{ error }}
+                                </p>
+                            {% endfor %}
+
+                        </div>
+
+                        {% endfor %}
+
+                    </div>
+
+                    {% if form.non_field_errors %}
+                        <div class="text-danger mt-3">
+                            {{ form.non_field_errors }}
+                        </div>
+                    {% endif %}
+
+                    <button type="submit" class="contact-submit">
+                        Send Message <span aria-hidden="true">→</span>
+                    </button>
+
+                    <p class="contact-privacy">
+                        <span aria-hidden="true">♧</span>
+                        Your information will be handled with care.
+                    </p>
+
+                </form>
+
+            </div>
 
         </div>
 
     </div>
-
-    
-<!-- CONTACT INFORMATION -->
-<div class="row justify-content-center mt-5">
-
-    <div class="col-md-6 text-center mb-4">
-        <h3 class="h5">Call Us</h3>
-
-        <a href="tel:+972542329723"
-           class="text-decoration-none">
-            +972 54-232-9723
-        </a>
-    </div>
-
-    <div class="col-md-6 text-center mb-4">
-        <h3 class="h5">Email Us</h3>
-
-        <a href="mailto:maksim@scalla.net"
-           class="text-decoration-none">
-            maksim@scalla.net
-        </a>
-    </div>
-
-</div>
-
 
 </section>

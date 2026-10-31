@@ -1,61 +1,93 @@
 
-<!-- FOOTER -->
-<footer class="bg-dark text-white pt-5 pb-3">
-
+<footer class="scalla-footer">
     <div class="container">
 
-        <div class="row gy-4">
+        <div class="row gy-5 scalla-footer-main">
 
-            <!-- Company -->
-            <div class="col-md-6">
-                <h4 class="fw-bold">SCALLA</h4>
-                <p class="text-white-50">
-                    Professional IT Solutions
+            <!-- BRAND -->
+            <div class="col-lg-6">
+
+                <a href="{% url 'home' %}" class="scalla-footer-brand">
+                    <span aria-hidden="true">
+                        <svg width="48" height="32"
+                             viewBox="0 0 100 65"
+                             xmlns="http://www.w3.org/2000/svg">
+
+                            <path d="M2 61 L25 39 L36 44 L58 5 L79 37 L87 31 L99 61 Z"
+                                  fill="#C5D4C9"/>
+
+                            <path d="M36 44 L58 5 L53 35 L25 61 L2 61 Z"
+                                  fill="#8FA99A"/>
+
+                            <path d="M58 5 L79 37 L69 31 L62 22 L53 35 Z"
+                                  fill="#FFFFFF"/>
+
+                            <path d="M53 35 L58 5 L62 22 L69 31 L47 61 L25 61 Z"
+                                  fill="#AFC3B5"/>
+
+                            <path d="M79 37 L87 31 L99 61 L70 61 Z"
+                                  fill="#718E7D"/>
+
+                        </svg>
+                    </span>
+                    SCALLA
+                </a>
+
+                <p class="scalla-footer-description">
+                    Reliable IT infrastructure, network solutions
+                    and technical support for modern businesses.
                 </p>
 
-                
+                <p class="scalla-footer-tagline">
+                    TECHNOLOGY THAT MOVES BUSINESS FORWARD.
+                </p>
+
             </div>
 
-            <!-- Contacts -->
-            <div class="col-md-6">
-                <h5>Contact Us</h5>
+            <!-- NAVIGATION -->
+            <div class="col-lg-3 col-md-6">
+                <h4>Explore</h4>
 
-                <p class="mb-2">
-                    Phone:
-                    <a href="tel:+972542329723"
-                       class="text-white text-decoration-none">
-                        0542329723
+                <nav class="scalla-footer-links"
+                     aria-label="Footer navigation">
+
+                    <a href="{% url 'home' %}#services">Services</a>
+                    <a href="{% url 'home' %}#projects">Projects</a>
+                    <a href="{% url 'home' %}#about">About</a>
+                    <a href="{% url 'home' %}#contact">Contact</a>
+
+                </nav>
+            </div>
+
+            <!-- CONTACTS -->
+            <div class="col-lg-3 col-md-6">
+                <h4>Get in Touch</h4>
+
+                <div class="scalla-footer-links">
+
+                    <a href="tel:+972542329723">
+                        +972 54-232-9723
                     </a>
-                </p>
 
-                <p>
-                    Email:
-                    <a href="mailto:maksim@scalla.net"
-                       class="text-white text-decoration-none">
+                    <a href="mailto:maksim@scalla.net">
                         maksim@scalla.net
                     </a>
-                </p>
+
+                </div>
             </div>
 
         </div>
 
-        <hr class="border-secondary my-4">
+        <!-- FOOTER BOTTOM -->
+        <div class="scalla-footer-bottom">
 
-        <!-- Bottom Footer -->
-        <div class="d-flex flex-column flex-md-row
-                    justify-content-between align-items-center gap-2">
+            <p>© 2026 SCALLA. All Rights Reserved.</p>
 
-            <p class="text-white-50 mb-0">
-                © 2026 SCALLA. All Rights Reserved.
-            </p>
-            <a href="{% url 'privacy_policy' %}"
-            class="text-white-50 text-decoration-none">
+            <a href="{% url 'privacy_policy' %}">
                 Privacy Policy
             </a>
-            
 
         </div>
 
     </div>
-
 </footer>

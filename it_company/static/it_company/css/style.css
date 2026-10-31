@@ -1,225 +1,2311 @@
 
-/* ===================================
-   SCALLA — SLOW LINE DRAWING LOGO
-=================================== */
+/* ==========================================
+   SCALLA — NAVBAR & FOOTER
+   ========================================== */
 
-.scalla-logo-animation {
-    width: 100%;
-    display: flex;
-    justify-content: center;
+/* NAVBAR */
+
+.scalla-navbar {
+    background: #f7f8f6;
+    border-bottom: 1px solid #e1e6e1;
+    padding: 18px 0;
+    position: relative;
+    z-index: 1000;
+}
+
+/* UNIFIED LOGO */
+
+.scalla-brand,
+.scalla-footer-brand {
+    display: inline-flex;
     align-items: center;
-    background: transparent;
+    gap: 12px;
+    font-size: 29px;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    line-height: 1.2;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: opacity 0.25s ease;
 }
 
-.scalla-line-logo {
-    display: block;
-    width: 100%;
-    max-width: 520px;
-    height: auto;
-    overflow: visible;
+.scalla-brand {
+    color: #17231c;
 }
 
-/* Thin architectural lines */
-
-.logo-line {
-    fill: none;
-    stroke: #424d5b;
-    stroke-width: 1.6;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-
-    stroke-dasharray: 1200;
-    stroke-dashoffset: 1200;
-
-    animation: scallaDraw 3.4s ease-in-out forwards;
+.scalla-footer-brand {
+    color: #ffffff;
 }
 
-/* Sequential drawing */
-
-.draw-1 { animation-delay: 0s; }
-.draw-2 { animation-delay: 0.8s; }
-
-.draw-3 { animation-delay: 1.6s; }
-.draw-4 { animation-delay: 2.4s; }
-
-.draw-5 {
-    stroke: #aab2bd;
-    animation-delay: 3.2s;
+.scalla-brand-symbol,
+.scalla-footer-brand span {
+    font-size: 29px;
+    font-weight: 400;
+    color: #a7bbae;
 }
 
-.draw-6 { animation-delay: 4s; }
-
-.draw-7 {
-    stroke: #aab2bd;
-    animation-delay: 4.8s;
+.scalla-brand:hover {
+    color: #17231c;
+    opacity: 0.8;
 }
 
-.draw-8 { animation-delay: 5.6s; }
-
-/* Brand lettering */
-
-.scalla-animated-text {
-    fill: #333d49;
-    font-size: 47px;
-    font-weight: 300;
-    letter-spacing: 17px;
-
-    opacity: 0;
-    animation: scallaTextReveal 2s ease 8s forwards;
+.scalla-footer-brand:hover {
+    color: #ffffff;
+    opacity: 0.8;
 }
 
-@keyframes scallaDraw {
-    to {
-        stroke-dashoffset: 0;
-    }
+/* NAVIGATION LINKS */
+
+.scalla-navbar .navbar-nav {
+    gap: 28px;
 }
 
-@keyframes scallaTextReveal {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
+.scalla-navbar .nav-link {
+    color: #47574c;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 8px 0;
+    transition: color 0.25s ease;
 }
 
-/* Mobile */
+.scalla-navbar .nav-link:hover,
+.scalla-navbar .nav-link:focus {
+    color: #173d2a;
+}
+
+/* NAVBAR CONTACT BUTTON */
+
+.scalla-nav-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+    background: #204631;
+    color: #ffffff;
+    border: 1px solid #204631;
+    border-radius: 4px;
+    padding: 12px 20px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.25s ease,
+                transform 0.25s ease;
+}
+
+.scalla-nav-cta:hover {
+    background: #326348;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.scalla-nav-cta span {
+    font-size: 17px;
+}
+
+/* MOBILE NAVBAR BUTTON */
+
+.scalla-navbar .navbar-toggler {
+    border: 1px solid #d8dfd9;
+    border-radius: 4px;
+    padding: 8px 11px;
+}
+
+.scalla-navbar .navbar-toggler:focus {
+    box-shadow: 0 0 0 2px #c3d2c7;
+}
+
+/* ==========================================
+   FOOTER — SOFT GRAPHITE
+   ========================================== */
+
+.scalla-footer {
+    background: #303c36;
+    color: #f5f6f3;
+    padding: 80px 0 28px;
+    border-top: 1px solid #46534b;
+}
+
+/* FOOTER MAIN */
+
+.scalla-footer-main {
+    padding-bottom: 60px;
+}
+
+/* FOOTER DESCRIPTION */
+
+.scalla-footer-description {
+    max-width: 380px;
+    margin: 28px 0 25px;
+    color: #d2dbd3;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.85;
+}
+
+/* FOOTER TAGLINE */
+
+.scalla-footer-tagline {
+    color: #b3c8b8;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    line-height: 1.7;
+}
+
+/* FOOTER HEADINGS */
+
+.scalla-footer h4 {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    margin-bottom: 27px;
+}
+
+/* FOOTER LINKS */
+
+.scalla-footer-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 17px;
+}
+
+.scalla-footer-links a {
+    color: #d0dad1;
+    font-size: 14px;
+    line-height: 1.5;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+    transition: color 0.25s ease,
+                transform 0.25s ease;
+}
+
+.scalla-footer-links a:hover {
+    color: #ffffff;
+    transform: translateX(4px);
+}
+
+/* FOOTER BOTTOM */
+
+.scalla-footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    border-top: 1px solid #56635a;
+    padding-top: 27px;
+}
+
+.scalla-footer-bottom p {
+    margin: 0;
+}
+
+.scalla-footer-bottom p,
+.scalla-footer-bottom a {
+    color: #bdc9bf;
+    font-size: 12px;
+    line-height: 1.6;
+    text-decoration: none;
+}
+
+.scalla-footer-bottom a {
+    transition: color 0.25s ease;
+}
+
+.scalla-footer-bottom a:hover {
+    color: #ffffff;
+}
+
+/* ==========================================
+   TABLET
+   ========================================== */
 
 @media (max-width: 991px) {
-    .scalla-line-logo {
-        max-width: 400px;
+    .scalla-navbar {
+        padding: 15px 0;
+    }
+
+    .scalla-navbar .navbar-collapse {
+        padding: 24px 0 10px;
+    }
+
+    .scalla-navbar .navbar-nav {
+        gap: 8px;
+        margin-bottom: 20px;
+    }
+
+    .scalla-nav-cta {
+        width: 100%;
+    }
+
+    .scalla-footer {
+        padding-top: 70px;
+    }
+
+    .scalla-footer-main {
+        padding-bottom: 55px;
     }
 }
 
-@media (max-width: 576px) {
-    .scalla-line-logo {
-        max-width: 310px;
+/* ==========================================
+   MOBILE
+   ========================================== */
+
+@media (max-width: 767px) {
+    .scalla-footer {
+        padding: 60px 0 25px;
+    }
+
+    .scalla-footer-description {
+        margin: 20px 0;
+        font-size: 14px;
+    }
+
+    .scalla-footer-main {
+        padding-bottom: 45px;
+    }
+
+    .scalla-footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
     }
 }
 
-/* Reduced motion */
+@media (max-width: 575px) {
+    .scalla-brand,
+    .scalla-footer-brand {
+        font-size: 25px;
+    }
+
+    .scalla-brand-symbol,
+    .scalla-footer-brand span {
+        font-size: 25px;
+    }
+}
+
+/* ACCESSIBILITY */
+
+
+/* ==========================================
+   SCALLA — ANIMATED SERVICES
+   ========================================== */
+
+#services {
+    padding-top: 110px !important;
+    padding-bottom: 115px !important;
+    color: #17231c;
+}
+
+/* SECTION TITLE */
+
+#services > h2 {
+    color: #17231c;
+    font-size: clamp(36px, 4vw, 54px);
+    font-weight: 650;
+    letter-spacing: -0.045em;
+    margin-bottom: 18px !important;
+}
+
+#services > .text-muted {
+    color: #65746a !important;
+    font-size: 16px;
+    margin-bottom: 60px !important;
+}
+
+/* CARDS */
+
+#services .card {
+    position: relative;
+    min-height: 270px;
+    overflow: hidden;
+
+    background: #f7f8f6;
+    border: 1px solid #dce4dc;
+    border-radius: 4px;
+    box-shadow: none;
+
+    transition:
+        transform 0.45s cubic-bezier(.2,.8,.2,1),
+        background 0.4s ease,
+        border-color 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+/* HOVER */
+
+#services .card:hover {
+    transform: translateY(-9px);
+    background: #eef3ed;
+    border-color: #a3b8a7;
+    box-shadow: 0 18px 35px rgba(23, 49, 31, 0.07);
+}
+
+/* ANIMATED TOP LINE */
+
+#services .card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 0;
+    height: 3px;
+    background: #648570;
+
+    transition: width 0.55s cubic-bezier(.2,.8,.2,1);
+}
+
+#services .card:hover::before {
+    width: 100%;
+}
+
+/* CONTENT */
+
+#services .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    padding: 38px 32px;
+}
+
+/* TITLE */
+
+#services .card-title {
+    color: #213e2d;
+    font-size: 23px;
+    font-weight: 650;
+    letter-spacing: -0.035em;
+    line-height: 1.3;
+    margin-bottom: 20px;
+
+    transition:
+        transform 0.4s ease,
+        color 0.4s ease;
+}
+
+#services .card:hover .card-title {
+    transform: translateY(-5px);
+    color: #326348;
+}
+
+/* DESCRIPTION */
+
+#services .card-text {
+    color: #66746b;
+    font-size: 14px;
+    line-height: 1.85;
+    margin-bottom: 0;
+
+    opacity: 0.8;
+    transform: translateY(5px);
+
+    transition:
+        opacity 0.4s ease,
+        transform 0.4s ease;
+}
+
+#services .card:hover .card-text {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* SOFT BACKGROUND ACCENT */
+
+#services .card::after {
+    content: "";
+    position: absolute;
+    right: -65px;
+    bottom: -85px;
+
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+
+    background: radial-gradient(
+        circle,
+        rgba(111, 151, 121, 0.12),
+        transparent 70%
+    );
+
+    opacity: 0;
+    transform: scale(0.7);
+
+    transition:
+        opacity 0.5s ease,
+        transform 0.6s ease;
+
+    pointer-events: none;
+}
+
+#services .card:hover::after {
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+/* ENTRANCE ANIMATION */
+
+
+
 
 @media (prefers-reduced-motion: reduce) {
-    .logo-line {
-        animation: none;
-        stroke-dashoffset: 0;
-    }
-
-    .scalla-animated-text {
-        animation: none;
+    #services.services-ready .row > div {
         opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+
+
+/* TABLET */
+
+@media (max-width: 991px) {
+    #services {
+        padding-top: 80px !important;
+        padding-bottom: 85px !important;
+    }
+
+    #services .card {
+        min-height: 240px;
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 767px) {
+    #services {
+        padding-top: 65px !important;
+        padding-bottom: 70px !important;
+    }
+
+    #services > h2 {
+        font-size: 36px;
+    }
+
+    #services > .text-muted {
+        font-size: 15px;
+        margin-bottom: 35px !important;
+    }
+
+    #services .card {
+        min-height: 210px;
+    }
+
+    #services .card-body {
+        padding: 30px 25px;
+    }
+
+    #services .card-title {
+        font-size: 21px;
+    }
+}
+
+/* ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+    #services .row > div {
+        animation: none;
+    }
+
+    #services .card,
+    #services .card::before,
+    #services .card::after,
+    #services .card-title,
+    #services .card-text {
+        transition: none;
+    }
+
+    #services .card:hover,
+    #services .card:hover .card-title,
+    #services .card:hover .card-text {
+        transform: none;
     }
 }
 
 
 
-/* SCALLA — CLEAN ARCHITECTURAL LOGO */
+/* ==========================================
+   SCALLA — ABOUT SECTION
+   ========================================== */
 
-.scalla-logo-animation {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: transparent;
+#about {
+    background: #f7f8f6;
+    color: #17231c;
+    padding: 100px 0 !important;
 }
 
-.scalla-line-logo {
+/* SECTION LABELS */
+
+#about .text-uppercase {
+    color: #6f8979 !important;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    margin-bottom: 22px;
+}
+
+/* MAIN HEADINGS */
+
+#about h2 {
+    max-width: 800px;
+    color: #17231c;
+    font-size: clamp(36px, 4vw, 54px);
+    font-weight: 650;
+    letter-spacing: -0.045em;
+    line-height: 1.15;
+    margin-bottom: 24px !important;
+}
+
+/* INTRO DESCRIPTION */
+
+#about .lead {
+    max-width: 650px;
+    color: #65746a;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.85;
+    margin-bottom: 55px !important;
+}
+
+/* WHY CHOOSE SCALLA */
+
+#about > .mb-5 {
+    padding-bottom: 85px;
+    margin-bottom: 85px !important;
+    border-bottom: 1px solid #dce4dc;
+}
+
+#about > .mb-5 .row {
+    row-gap: 40px;
+}
+
+#about > .mb-5 .col-md-6 {
+    padding-right: 55px;
+}
+
+/* BENEFIT HEADINGS */
+
+#about > .mb-5 .col-md-6 h3 {
+    position: relative;
+    color: #213e2d;
+    font-size: 19px;
+    font-weight: 650;
+    letter-spacing: -0.02em;
+    padding-top: 23px;
+    margin-bottom: 12px;
+}
+
+#about > .mb-5 .col-md-6 h3::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 36px;
+    height: 2px;
+    background: #799985;
+}
+
+#about > .mb-5 .col-md-6 p {
+    max-width: 340px;
+    color: #66746b;
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 0;
+}
+
+/* ==========================================
+   OUR PROCESS
+   ========================================== */
+
+#about > div:last-child h2 {
+    margin-bottom: 60px !important;
+}
+
+#about > div:last-child .row {
+    row-gap: 35px;
+}
+
+/* PROCESS STEPS */
+
+#about > div:last-child .col-md-3 {
+    position: relative;
+    padding-top: 28px;
+}
+
+/* THIN TOP LINE */
+
+#about > div:last-child .col-md-3::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 12px;
+    right: 12px;
+    height: 1px;
+    background: #cbd7cd;
+}
+
+/* SMALL GREEN POINT */
+
+#about > div:last-child .col-md-3::after {
+    content: "";
+    position: absolute;
+    top: -3px;
+    left: 12px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #5e806b;
+}
+
+/* PROCESS TITLES */
+
+#about > div:last-child .col-md-3 h3 {
+    color: #213e2d;
+    font-size: 18px;
+    font-weight: 650;
+    letter-spacing: -0.02em;
+    margin-bottom: 15px;
+}
+
+#about > div:last-child .col-md-3 p {
+    max-width: 220px;
+    color: #66746b;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
+
+@media (max-width: 991px) {
+    #about {
+        padding: 75px 0 !important;
+    }
+
+    #about > .mb-5 {
+        padding-bottom: 65px;
+        margin-bottom: 65px !important;
+    }
+
+    #about > .mb-5 .col-md-6 {
+        padding-right: 20px;
+    }
+}
+
+@media (max-width: 767px) {
+    #about {
+        padding: 65px 0 !important;
+    }
+
+    #about h2 {
+        font-size: 36px;
+    }
+
+    #about .lead {
+        font-size: 15px;
+    }
+
+    #about > .mb-5 {
+        padding-bottom: 50px;
+        margin-bottom: 55px !important;
+    }
+
+    #about > .mb-5 .row {
+        row-gap: 25px;
+    }
+
+    #about > div:last-child h2 {
+        margin-bottom: 35px !important;
+    }
+
+    #about > div:last-child .col-md-3 {
+        padding-top: 20px;
+    }
+}
+
+
+
+/* ==========================================
+   SCALLA — CONTACT
+   ========================================== */
+
+
+/* ==========================================
+   SCALLA — FULL IMAGE CONTACT
+   ========================================== */
+
+.scalla-contact {
+    position: relative;
+    isolation: isolate;
+    padding: 110px 0;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(14, 27, 20, 0.78) 0%,
+            rgba(21, 38, 28, 0.58) 45%,
+            rgba(20, 34, 25, 0.35) 100%
+        ),
+        url("../images/scalla_contact_rock.png")
+        center center / cover no-repeat;
+}
+
+/* TWO COLUMNS */
+
+.contact-layout {
+    display: grid;
+    grid-template-columns: 45% 55%;
+    align-items: center;
+    gap: 0;
+}
+
+/* LEFT CONTENT */
+
+.contact-left {
+    padding: 30px 65px 30px 0;
+}
+
+.contact-kicker {
+    color: #c1d5c5;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    margin-bottom: 25px;
+}
+
+.contact-title {
+    color: #ffffff;
+    font-size: clamp(42px, 4.5vw, 66px);
+    font-weight: 650;
+    line-height: 1.08;
+    letter-spacing: -0.055em;
+    margin-bottom: 28px;
+}
+
+.contact-title span {
+    display: block;
+    color: #d2e3d4;
+}
+
+.contact-lead {
+    max-width: 400px;
+    color: #e0e8e0;
+    font-size: 15px;
+    line-height: 1.9;
+    margin-bottom: 0;
+}
+
+/* HIDE SMALL ROCK IMAGE */
+
+.contact-rock-wrap {
+    display: none;
+}
+
+/* RIGHT SIDE */
+
+.contact-right {
+    min-width: 0;
+    padding-left: 35px;
+}
+
+/* TRANSLUCENT FORM */
+
+.contact-form-box {
+    background: rgba(249, 250, 247, 0.94);
+    border: 1px solid rgba(255, 255, 255, 0.65);
+    border-radius: 5px;
+    padding: 48px 45px;
+    box-shadow: 0 18px 55px rgba(0, 0, 0, 0.12);
+}
+
+.contact-form-box h3 {
+    color: #17231c;
+    font-size: 28px;
+    font-weight: 650;
+    letter-spacing: -0.035em;
+    margin-bottom: 12px;
+}
+
+.contact-form-description {
+    color: #68776d;
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+/* FORM GRID */
+
+.contact-fields {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px 20px;
+}
+
+.contact-field {
+    min-width: 0;
+}
+
+.contact-field-full {
+    grid-column: 1 / -1;
+}
+
+/* LABELS */
+
+.contact-field .form-label {
+    display: block;
+    color: #34473a;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 9px;
+}
+
+/* INPUTS */
+
+.contact-field input,
+.contact-field select,
+.contact-field textarea {
     display: block;
     width: 100%;
-    max-width: 500px;
-    height: auto;
-    overflow: visible;
-    filter: none;
-    animation: none;
+    min-width: 0;
+    max-width: 100%;
+    padding: 13px 14px;
+
+    background: #ffffff;
+    color: #17231c;
+    border: 1px solid #d4ded5;
+    border-radius: 3px;
+
+    font: inherit;
+    font-size: 14px;
+    outline: none;
+
+    transition: border-color 0.2s ease,
+                box-shadow 0.2s ease;
 }
 
-.scalla-stroke {
-    fill: none;
-    stroke: #394653;
-    stroke-width: 2;
-    stroke-linecap: square;
-    stroke-linejoin: miter;
-    stroke-dasharray: 1200;
-    stroke-dashoffset: 1200;
-    animation: scallaTrace 4s ease-in-out forwards;
+.contact-field input:focus,
+.contact-field select:focus,
+.contact-field textarea:focus {
+    border-color: #648b70;
+    box-shadow: 0 0 0 3px rgba(100, 139, 112, 0.13);
 }
 
-.stroke-1 { animation-delay: 0s; }
-.stroke-2 {
-    stroke: #8d98a5;
-    animation-delay: 1s;
-}
-.stroke-3 { animation-delay: 2s; }
-.stroke-4 { animation-delay: 3s; }
-.stroke-5 { animation-delay: 4s; }
-.stroke-6 {
-    stroke: #aeb7c1;
-    animation-delay: 5s;
+.contact-field textarea {
+    min-height: 125px;
+    resize: vertical;
 }
 
-.scalla-wordmark {
-    fill: #303b48;
-    font-family: Arial, sans-serif;
-    font-size: 31px;
-    font-weight: 300;
-    letter-spacing: 11px;
-    opacity: 0;
-    animation: scallaReveal 1.5s ease 8.5s forwards;
+/* SEND BUTTON */
+
+.contact-submit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    min-width: 200px;
+
+    margin-top: 30px;
+    padding: 15px 22px;
+
+    background: #204631;
+    color: #ffffff;
+    border: 1px solid #204631;
+    border-radius: 4px;
+
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+
+    transition: background 0.25s ease,
+                transform 0.25s ease;
 }
 
-@keyframes scallaTrace {
-    to { stroke-dashoffset: 0; }
+.contact-submit:hover {
+    background: #326348;
+    transform: translateY(-2px);
 }
 
-@keyframes scallaReveal {
-    to { opacity: 1; }
+/* PRIVACY */
+
+.contact-privacy {
+    color: #758479;
+    font-size: 11px;
+    margin: 19px 0 0;
+    line-height: 1.6;
 }
 
-@media (max-width: 576px) {
-    .scalla-line-logo {
-        max-width: 320px;
+/* ==========================================
+   TABLET
+   ========================================== */
+
+@media (max-width: 991px) {
+    .scalla-contact {
+        padding: 80px 0;
+    }
+
+    .contact-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .contact-left {
+        padding: 0;
+    }
+
+    .contact-right {
+        padding: 0;
+    }
+
+    .contact-title {
+        max-width: 650px;
+    }
+}
+
+/* ==========================================
+   MOBILE
+   ========================================== */
+
+@media (max-width: 575px) {
+    .scalla-contact {
+        padding: 65px 0;
+        background-position: 40% center;
+    }
+
+    .contact-title {
+        font-size: 42px;
+    }
+
+    .contact-lead {
+        font-size: 14px;
+    }
+
+    .contact-form-box {
+        padding: 30px 22px;
+    }
+
+    .contact-fields {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .contact-field-full {
+        grid-column: auto;
+    }
+
+    .contact-submit {
+        width: 100%;
     }
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .scalla-stroke {
-        animation: none;
-        stroke-dashoffset: 0;
+    .contact-submit {
+        transition: none;
     }
 
-    .scalla-wordmark {
-        animation: none;
-        opacity: 1;
+    .contact-submit:hover {
+        transform: none;
     }
 }
 
 
 
-/* Text on the left, logo on the right and lower */
+/* COMPACT CONTACT FORM */
+
+.contact-layout {
+    grid-template-columns: 52% 48%;
+}
+
+.contact-right {
+    padding-left: 30px;
+}
+
+.contact-form-box {
+    max-width: 460px;
+    margin-left: auto;
+    padding: 30px 32px;
+}
+
+.contact-form-box h3 {
+    font-size: 23px;
+    margin-bottom: 8px;
+}
+
+.contact-form-description {
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.contact-fields {
+    gap: 15px;
+}
+
+.contact-field .form-label {
+    margin-bottom: 6px;
+}
+
+.contact-field input,
+.contact-field select,
+.contact-field textarea {
+    padding: 10px 12px;
+    font-size: 13px;
+}
+
+.contact-field textarea {
+    min-height: 85px;
+}
+
+.contact-submit {
+    margin-top: 20px;
+    padding: 12px 18px;
+}
+
+.contact-privacy {
+    margin-top: 12px;
+}
+
+/* TABLET & MOBILE */
+
+@media (max-width: 991px) {
+    .contact-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-right {
+        padding-left: 0;
+    }
+
+    .contact-form-box {
+        max-width: 520px;
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 575px) {
+    .contact-form-box {
+        max-width: 100%;
+        padding: 25px 20px;
+    }
+
+    .contact-fields {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+/* ==========================================
+   SCALLA — SERVICES SECTION
+   ========================================== */
+
+#services {
+    padding-top: 100px !important;
+    padding-bottom: 105px !important;
+    color: #17231c;
+}
+
+/* SECTION TITLE */
+
+#services > h2 {
+    color: #17231c;
+    font-size: clamp(36px, 4vw, 54px);
+    font-weight: 650;
+    letter-spacing: -0.045em;
+    line-height: 1.15;
+    margin-bottom: 18px !important;
+}
+
+/* SECTION DESCRIPTION */
+
+#services > .text-muted {
+    color: #65746a !important;
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 55px !important;
+}
+
+/* SERVICE CARDS */
+
+#services .card {
+    position: relative;
+    min-height: 240px;
+    height: 100%;
+    background: #f7f8f6;
+    border: 1px solid #dce4dc;
+    border-radius: 4px;
+    box-shadow: none;
+    overflow: hidden;
+
+    transition:
+        background 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+#services .card:hover {
+    background: #eef3ed;
+    border-color: #9cb3a1;
+    transform: translateY(-5px);
+}
+
+/* CARD CONTENT */
+
+#services .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 35px 30px;
+}
+
+/* SERVICE TITLE */
+
+#services .card-title {
+    color: #213e2d;
+    font-size: 21px;
+    font-weight: 650;
+    letter-spacing: -0.025em;
+    line-height: 1.3;
+    margin-bottom: 18px;
+}
+
+/* SERVICE DESCRIPTION */
+
+#services .card-text {
+    color: #66746b;
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 0;
+}
+
+/* BOTTOM ACCENT LINE */
+
+#services .card::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #648570;
+    transition: width 0.35s ease;
+}
+
+#services .card:hover::after {
+    width: 100%;
+}
+
+/* ==========================================
+   TABLET
+   ========================================== */
+
+@media (max-width: 991px) {
+    #services {
+        padding-top: 80px !important;
+        padding-bottom: 85px !important;
+    }
+
+    #services .card {
+        min-height: 220px;
+    }
+
+    #services .card-body {
+        padding: 30px 25px;
+    }
+}
+
+/* ==========================================
+   MOBILE
+   ========================================== */
+
+@media (max-width: 767px) {
+    #services {
+        padding-top: 65px !important;
+        padding-bottom: 70px !important;
+    }
+
+    #services > h2 {
+        font-size: 36px;
+    }
+
+    #services > .text-muted {
+        font-size: 15px;
+        margin-bottom: 35px !important;
+    }
+
+    #services .card {
+        min-height: 190px;
+    }
+
+    #services .card-body {
+        padding: 28px 24px;
+    }
+
+    #services .card-title {
+        font-size: 20px;
+    }
+}
+
+/* REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+    #services .card,
+    #services .card::after {
+        transition: none;
+    }
+
+    #services .card:hover {
+        transform: none;
+    }
+}
+
+
+
+/* ==========================================
+   SCALLA — ABOUT
+   ========================================== */
+
+#about {
+    color: #17231c;
+    padding-top: 100px !important;
+    padding-bottom: 105px !important;
+}
+
+/* SECTION LABELS */
+
+#about .text-uppercase {
+    color: #789481 !important;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    margin-bottom: 22px;
+}
+
+/* HEADINGS */
+
+#about h2 {
+    color: #17231c;
+    font-size: clamp(36px, 4vw, 54px);
+    font-weight: 650;
+    letter-spacing: -0.045em;
+    line-height: 1.15;
+    margin-bottom: 24px !important;
+}
+
+/* INTRO */
+
+#about .lead {
+    max-width: 680px;
+    color: #65746a;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.8;
+    margin-bottom: 55px !important;
+}
+
+/* ==========================================
+   WHY CHOOSE SCALLA
+   ========================================== */
+
+#about > div:first-child {
+    padding-bottom: 80px;
+    margin-bottom: 80px !important;
+    border-bottom: 1px solid #dce4dc;
+}
+
+/* BENEFIT ITEMS */
+
+#about > div:first-child .col-md-6 {
+    padding-top: 12px;
+}
+
+#about > div:first-child .col-md-6 h3 {
+    position: relative;
+    color: #213e2d;
+    font-size: 20px;
+    font-weight: 650;
+    letter-spacing: -0.025em;
+    padding-top: 23px;
+    margin-bottom: 13px;
+}
+
+/* GREEN ACCENT */
+
+#about > div:first-child .col-md-6 h3::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 36px;
+    height: 2px;
+    background: #789481;
+}
+
+#about > div:first-child .col-md-6 p {
+    max-width: 380px;
+    color: #66746b;
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 0;
+}
+
+/* ==========================================
+   OUR PROCESS
+   ========================================== */
+
+#about > div:last-child h2 {
+    margin-bottom: 55px !important;
+}
+
+#about > div:last-child .col-md-3 {
+    position: relative;
+    padding-top: 28px;
+}
+
+/* TOP LINE */
+
+#about > div:last-child .col-md-3::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 12px;
+    right: 12px;
+    height: 1px;
+    background: #cbd7cd;
+}
+
+/* GREEN DOT */
+
+#about > div:last-child .col-md-3::after {
+    content: "";
+    position: absolute;
+    top: -3px;
+    left: 12px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #789481;
+}
+
+/* PROCESS TITLES */
+
+#about > div:last-child .col-md-3 h3 {
+    color: #213e2d;
+    font-size: 19px;
+    font-weight: 650;
+    letter-spacing: -0.02em;
+    margin-bottom: 15px;
+}
+
+/* PROCESS DESCRIPTION */
+
+#about > div:last-child .col-md-3 p {
+    max-width: 240px;
+    color: #66746b;
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 0;
+}
+
+/* ==========================================
+   TABLET
+   ========================================== */
+
+@media (max-width: 991px) {
+    #about {
+        padding-top: 80px !important;
+        padding-bottom: 85px !important;
+    }
+
+    #about > div:first-child {
+        padding-bottom: 60px;
+        margin-bottom: 60px !important;
+    }
+}
+
+/* ==========================================
+   MOBILE
+   ========================================== */
+
+@media (max-width: 767px) {
+    #about {
+        padding-top: 65px !important;
+        padding-bottom: 70px !important;
+    }
+
+    #about h2 {
+        font-size: 36px;
+    }
+
+    #about .lead {
+        font-size: 15px;
+        margin-bottom: 35px !important;
+    }
+
+    #about > div:first-child {
+        padding-bottom: 50px;
+        margin-bottom: 55px !important;
+    }
+
+    #about > div:last-child h2 {
+        margin-bottom: 35px !important;
+    }
+
+    #about > div:last-child .col-md-3 {
+        padding-top: 23px;
+    }
+}
+
+
+
+/* ==========================================
+   SCALLA — HERO
+   ========================================== */
+
+.scalla-hero {
+    background: #f7f8f6;
+    overflow: hidden;
+}
 
 .scalla-hero-grid {
     display: grid;
-    grid-template-columns: 1.15fr 1fr;
+    grid-template-columns: 52% 48%;
+    min-height: 590px;
+    align-items: stretch;
+}
+
+/* LEFT CONTENT */
+
+.scalla-hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 100px 20px 65px 0;
+    animation: heroFadeUp 0.9s ease both;
+}
+
+.hero-eyebrow {
+    color: #6f8979;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    margin-bottom: 25px;
+}
+
+.hero-title {
+    color: #17231c;
+    font-size: clamp(40px, 4.4vw, 66px);
+    font-weight: 700;
+    line-height: 1.08;
+    letter-spacing: -0.055em;
+    margin-bottom: 25px;
+}
+
+.hero-title span {
+    color: #52755e;
+}
+
+.hero-description {
+    max-width: 430px;
+    color: #65746a;
+    font-size: 15px;
+    line-height: 1.85;
+    margin-bottom: 32px;
+}
+
+/* BUTTONS */
+
+.hero-actions {
+    display: flex;
     align-items: center;
-    gap: 50px;
+    flex-wrap: wrap;
+    gap: 25px;
 }
 
-.scalla-logo-animation {
-    align-self: center;
-    transform: translateY(65px);
+.hero-actions .btn-dark {
+    background: #204631;
+    border-color: #204631;
+    border-radius: 4px;
+    padding: 13px 25px;
+    font-size: 14px;
 }
 
-/* Mobile: logo below text */
+.hero-actions .btn-dark:hover {
+    background: #326348;
+    border-color: #326348;
+}
+
+.hero-actions .btn-outline-dark {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #526157;
+    border-radius: 0;
+    color: #17231c;
+    padding: 12px 0;
+    font-size: 14px;
+}
+
+.hero-actions .btn-outline-dark:hover {
+    background: transparent;
+    color: #52755e;
+}
+
+/* BENEFITS */
+
+.hero-benefits {
+    display: flex;
+    gap: 20px;
+    margin-top: 55px;
+    color: #43584a;
+    font-size: 12px;
+}
+
+.hero-benefits > div {
+    flex: 1;
+    border-right: 1px solid #d9e1da;
+    padding-right: 12px;
+}
+
+.hero-benefits > div:last-child {
+    border-right: none;
+}
+
+/* RIGHT IMAGE */
+
+.scalla-hero-image {
+    position: relative;
+    min-width: 0;
+    min-height: 590px;
+    overflow: hidden;
+    background: #e5ebe5;
+}
+
+.scalla-hero-image img {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    animation: scallaImageReveal 1.5s ease-out both;
+    transition: transform 0.7s ease;
+}
+
+.scalla-hero-image:hover img {
+    transform: scale(1.04);
+}
+
+/* SOFT TRANSITION INTO IMAGE */
+
+.scalla-hero-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        #f7f8f6 0%,
+        rgba(247, 248, 246, 0.6) 12%,
+        transparent 38%
+    );
+    pointer-events: none;
+}
+
+/* ANIMATIONS */
+
+@keyframes heroFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scallaImageReveal {
+    from {
+        opacity: 0;
+        transform: scale(1.1);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ==========================================
+   STATISTICS
+   ========================================== */
+
+.scalla-stats-section {
+    background: #edf1ec;
+    padding: 38px 0;
+}
+
+.scalla-stats {
+    text-align: center;
+}
+
+.scalla-stats h3 {
+    color: #213e2d;
+    font-size: 34px;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    margin-bottom: 8px;
+}
+
+.scalla-stats p {
+    color: #65746a;
+    font-size: 13px;
+    margin-bottom: 0;
+}
+
+/* ==========================================
+   TABLET
+   ========================================== */
 
 @media (max-width: 991px) {
     .scalla-hero-grid {
         grid-template-columns: 1fr;
-        gap: 30px;
     }
 
-    .scalla-logo-animation {
-        transform: none;
-        margin-top: 15px;
+    .scalla-hero-content {
+        padding: 75px 0 55px;
     }
+
+    .scalla-hero-image {
+        min-height: 380px;
+    }
+
+    .scalla-hero-image::after {
+        display: none;
+    }
+
+    .hero-benefits {
+        margin-top: 40px;
+    }
+}
+
+/* ==========================================
+   MOBILE
+   ========================================== */
+
+@media (max-width: 575px) {
+    .scalla-hero-content {
+        padding: 60px 0 45px;
+    }
+
+    .hero-title {
+        font-size: 40px;
+    }
+
+    .hero-description {
+        font-size: 14px;
+    }
+
+    .hero-actions {
+        gap: 18px;
+    }
+
+    .hero-benefits {
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 35px;
+    }
+
+    .hero-benefits > div {
+        border-right: none;
+        border-bottom: 1px solid #d9e1da;
+        padding-bottom: 12px;
+    }
+
+    .hero-benefits > div:last-child {
+        border-bottom: none;
+    }
+
+    .scalla-hero-image {
+        min-height: 280px;
+    }
+
+    .scalla-stats-section {
+        padding: 30px 0;
+    }
+}
+
+/* ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+    .scalla-hero-content,
+    .scalla-hero-image img {
+        animation: none;
+    }
+
+    .scalla-hero-image img {
+        transition: none;
+    }
+
+    .scalla-hero-image:hover img {
+        transform: none;
+    }
+}
+
+
+
+/* ==========================================
+   SCALLA — PROJECTS
+   ========================================== */
+
+#projects {
+    padding-top: 105px !important;
+    padding-bottom: 110px !important;
+    color: #17231c;
+}
+
+/* SECTION HEADING */
+
+#projects > h2 {
+    color: #17231c;
+    font-size: clamp(36px, 4vw, 54px);
+    font-weight: 650;
+    letter-spacing: -0.045em;
+    line-height: 1.15;
+    margin-bottom: 18px !important;
+}
+
+#projects > .text-muted {
+    color: #65746a !important;
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 55px !important;
+}
+
+/* PROJECT CARDS */
+
+#projects .card {
+    position: relative;
+    min-height: 280px;
+    background: #ffffff;
+    border: 1px solid #dce4dc;
+    border-radius: 3px;
+    box-shadow: none;
+    overflow: hidden;
+
+    transition:
+        background 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+#projects .card:hover {
+    background: #f5f8f4;
+    border-color: #a3b8a7;
+    transform: translateY(-4px);
+}
+
+/* CARD CONTENT */
+
+#projects .card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 36px 30px;
+}
+
+/* PROJECT TITLE */
+
+#projects .card-title {
+    max-width: 90%;
+    color: #213e2d;
+    font-size: 24px;
+    font-weight: 650;
+    line-height: 1.3;
+    letter-spacing: -0.035em;
+    margin-bottom: 22px;
+}
+
+/* DESCRIPTION */
+
+#projects .card-text {
+    color: #66746b;
+    font-size: 14px;
+    line-height: 1.85;
+    margin-bottom: 28px;
+}
+
+/* COMPLETION DATE */
+
+#projects .card-body > .text-muted {
+    margin-top: auto;
+    margin-bottom: 0;
+    padding-top: 18px;
+    width: 100%;
+    border-top: 1px solid #e1e8e1;
+
+    color: #829186 !important;
+    font-size: 12px;
+    letter-spacing: 0.02em;
+}
+
+/* SUBTLE CORNER ARROW */
+
+#projects .card::after {
+    content: "↗";
+    position: absolute;
+    top: 27px;
+    right: 28px;
+
+    color: #789481;
+    font-size: 23px;
+    font-weight: 400;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+#projects .card:hover::after {
+    color: #204631;
+    transform: translate(3px, -3px);
+}
+
+/* EMPTY STATE */
+
+#projects .row > p {
+    color: #829186;
+    font-size: 15px;
+    padding: 45px 0;
+}
+
+/* TABLET */
+
+@media (max-width: 991px) {
+    #projects {
+        padding-top: 80px !important;
+        padding-bottom: 85px !important;
+    }
+
+    #projects .card {
+        min-height: 250px;
+    }
+
+    #projects .card-body {
+        padding: 30px 25px;
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 767px) {
+    #projects {
+        padding-top: 65px !important;
+        padding-bottom: 70px !important;
+    }
+
+    #projects > h2 {
+        font-size: 36px;
+    }
+
+    #projects > .text-muted {
+        font-size: 15px;
+        margin-bottom: 35px !important;
+    }
+
+    #projects .card {
+        min-height: 220px;
+    }
+
+    #projects .card-title {
+        font-size: 21px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #projects .card,
+    #projects .card::after {
+        transition: none;
+    }
+
+    #projects .card:hover,
+    #projects .card:hover::after {
+        transform: none;
+    }
+}
+
+
+
+/* ==========================================
+   SCALLA — ABOUT NEW DESIGN
+   ========================================== */
+
+.scalla-about {
+    position: relative;
+    overflow: hidden;
+    background: #f7f8f6;
+    padding: 110px 0 120px;
+    color: #17231c;
+}
+
+/* TOP LAYOUT */
+
+.scalla-about .about-intro {
+    display: grid;
+    grid-template-columns: 43% 57%;
+    gap: 45px;
+    align-items: center;
+    margin-bottom: 125px;
+}
+
+.scalla-about .about-intro-left {
+    min-width: 0;
+}
+
+.scalla-about .about-label {
+    margin: 0 0 35px;
+    color: #365f43;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+}
+
+/* MAIN TITLE */
+
+.scalla-about .about-main-title {
+    margin: 0 0 35px;
+    color: #101b15;
+    font-size: clamp(52px, 5.6vw, 88px);
+    font-weight: 750;
+    line-height: 0.99;
+    letter-spacing: -0.065em;
+}
+
+.scalla-about .about-main-title span {
+    color: #8daa91;
+}
+
+.scalla-about .about-description {
+    max-width: 470px;
+    margin: 0;
+    color: #39443e;
+    font-size: 17px;
+    line-height: 1.85;
+}
+
+/* FEATURES GRID */
+
+.scalla-about .about-features {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.scalla-about .about-feature {
+    min-width: 0;
+    padding: 28px 30px 35px;
+    border-bottom: 1px solid #d7dfd8;
+    transition: background 0.3s ease;
+}
+
+.scalla-about .about-feature:nth-child(odd) {
+    border-right: 1px solid #d7dfd8;
+}
+
+.scalla-about .about-feature:nth-child(n+3) {
+    border-bottom: none;
+}
+
+.scalla-about .about-feature:hover {
+    background: rgba(229, 237, 228, 0.5);
+}
+
+/* ICONS */
+
+.scalla-about .about-feature-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    margin-bottom: 22px;
+    border-radius: 16px;
+    background: #e3ebe2;
+    color: #204631;
+    font-size: 30px;
+    font-weight: 400;
+}
+
+/* FEATURE TEXT */
+
+.scalla-about .about-feature h3 {
+    margin: 0 0 12px;
+    color: #111a15;
+    font-size: 23px;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+}
+
+.scalla-about .about-feature p {
+    max-width: 240px;
+    margin: 0;
+    color: #39443e;
+    font-size: 15px;
+    line-height: 1.65;
+}
+
+/* ==========================================
+   OUR PROCESS
+   ========================================== */
+
+.scalla-about .about-process {
+    position: relative;
+}
+
+.scalla-about .about-process .about-label {
+    margin-bottom: 25px;
+}
+
+.scalla-about .about-process-title {
+    margin: 0 0 55px;
+    color: #101b15;
+    font-size: clamp(36px, 4vw, 58px);
+    font-weight: 750;
+    letter-spacing: -0.055em;
+    line-height: 1.12;
+}
+
+.scalla-about .about-process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 35px;
+}
+
+.scalla-about .about-step {
+    position: relative;
+    min-width: 0;
+}
+
+/* NUMBERS */
+
+.scalla-about .about-step-number {
+    position: relative;
+    margin-bottom: 15px;
+    color: #77947d;
+    font-size: clamp(55px, 5vw, 76px);
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -0.065em;
+}
+
+.scalla-about .about-step:not(:last-child)
+.about-step-number::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 105px;
+    right: 0;
+    height: 1px;
+    background: #cbd7cd;
+}
+
+.scalla-about .about-step h3 {
+    margin: 0 0 10px;
+    color: #111a15;
+    font-size: 23px;
+    font-weight: 700;
+    letter-spacing: -0.035em;
+}
+
+.scalla-about .about-step p {
+    max-width: 220px;
+    margin: 0;
+    color: #39443e;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+/* ==========================================
+   TABLET
+   ========================================== */
+
+@media (max-width: 991px) {
+
+    .scalla-about {
+        padding: 85px 0;
+    }
+
+    .scalla-about .about-intro {
+        grid-template-columns: 1fr;
+        gap: 55px;
+        margin-bottom: 90px;
+    }
+
+    .scalla-about .about-main-title {
+        font-size: clamp(54px, 8vw, 76px);
+    }
+
+    .scalla-about .about-process-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 45px;
+    }
+}
+
+/* ==========================================
+   MOBILE
+   ========================================== */
+
+@media (max-width: 575px) {
+
+    .scalla-about {
+        padding: 70px 0;
+    }
+
+    .scalla-about .about-intro {
+        gap: 40px;
+        margin-bottom: 75px;
+    }
+
+    .scalla-about .about-main-title {
+        font-size: clamp(45px, 11vw, 60px);
+    }
+
+    .scalla-about .about-description {
+        font-size: 15px;
+    }
+
+    .scalla-about .about-features {
+        grid-template-columns: 1fr;
+    }
+
+    .scalla-about .about-feature {
+        padding: 25px 10px;
+        border-right: none !important;
+        border-bottom: 1px solid #d7dfd8 !important;
+    }
+
+    .scalla-about .about-feature:last-child {
+        border-bottom: none !important;
+    }
+
+    .scalla-about .about-feature h3 {
+        font-size: 21px;
+    }
+
+    .scalla-about .about-process-title {
+        font-size: 38px;
+        margin-bottom: 40px;
+    }
+
+    .scalla-about .about-process-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 35px 20px;
+    }
+
+    .scalla-about .about-step-number {
+        font-size: 58px;
+    }
+
+    .scalla-about .about-step-number::after {
+        display: none;
+    }
+
+    .scalla-about .about-step h3 {
+        font-size: 19px;
+    }
+
+    .scalla-about .about-step p {
+        font-size: 13px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .scalla-about .about-feature {
+        transition: none;
+    }
+}
+
+
+
+/* SCALLA — GLOBAL BACKGROUND */
+
+html,
+body {
+    background-color: #f7f8f6 !important;
+}
+
+body {
+    background-image:
+        radial-gradient(
+            ellipse at 80% 20%,
+            rgba(130, 160, 140, 0.18),
+            transparent 55%
+        ),
+        radial-gradient(
+            ellipse at 15% 75%,
+            rgba(160, 185, 165, 0.14),
+            transparent 50%
+        ) !important;
+
+    background-attachment: fixed;
+}
+
+.scalla-hero,
+#services,
+#about,
+#projects,
+.scalla-about,
+.scalla-stats-section {
+    background: transparent !important;
+}
+
+
+/* ==========================================
+   SCALLA — SAGE GRAPHITE BACKGROUND
+   ========================================== */
+
+body {
+    background-color: #DDE3DF;
+    color: #17231c;
+}
+
+/* Main sections */
+
+#services,
+#projects,
+#about.scalla-about {
+    background-color: #DDE3DF !important;
+    background-image:
+        radial-gradient(
+            ellipse at 12% 15%,
+            rgba(255, 255, 255, 0.65),
+            transparent 55%
+        ),
+        radial-gradient(
+            ellipse at 90% 85%,
+            rgba(166, 185, 173, 0.28),
+            transparent 55%
+        ) !important;
+}
+
+/* Service cards */
+
+#services .card {
+    background: rgba(255, 255, 255, 0.68);
+    border-color: rgba(255, 255, 255, 0.7);
+}
+
+#services .card:hover {
+    background: #ffffff;
+}
+
+/* Project cards */
+
+#projects .card {
+    background: rgba(255, 255, 255, 0.72);
+}
+
+#projects .card:hover {
+    background: #ffffff;
 }

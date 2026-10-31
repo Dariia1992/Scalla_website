@@ -1,61 +1,76 @@
-<!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+<nav class="navbar navbar-expand-lg scalla-navbar">
     <div class="container">
 
-        <!-- Логотип -->
-        <a class="navbar-brand" href="{% url 'home' %}">
-            SCALLA
-        </a>
+        
+<a class="navbar-brand scalla-brand" href="{% url 'home' %}">
+    <span class="scalla-brand-symbol" aria-hidden="true">
+        <svg width="48" height="32"
+             viewBox="0 0 100 65"
+             xmlns="http://www.w3.org/2000/svg">
+
+            <path d="M2 61 L25 39 L36 44 L58 5 L79 37 L87 31 L99 61 Z"
+                  fill="#294B3B"/>
+
+            <path d="M36 44 L58 5 L53 35 L25 61 L2 61 Z"
+                  fill="#739080"/>
+
+            <path d="M58 5 L79 37 L69 31 L62 22 L53 35 Z"
+                  fill="#DCE6DE"/>
+
+            <path d="M53 35 L58 5 L62 22 L69 31 L47 61 L25 61 Z"
+                  fill="#426451"/>
+
+            <path d="M79 37 L87 31 L99 61 L70 61 Z"
+                  fill="#577562"/>
+
+        </svg>
+    </span>
+    SCALLA
+</a>
 
         
 
-        <!-- Кнопка мобильного меню -->
-        <button class="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarMenu"
-                aria-controls="navbarMenu"
-                aria-expanded="false"
-                aria-label="Toggle navigation">
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarMenu"
+            aria-controls="navbarMenu"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <!-- Ссылки меню -->
         <div class="collapse navbar-collapse" id="navbarMenu">
-            <ul class="navbar-nav ms-auto">
 
+            <ul class="navbar-nav mx-auto">
                 <li class="nav-item">
-                    <a class="nav-link active" href="{% url 'home' %}">
-                        Home
-                    </a>
+                    <a class="nav-link" href="{% url 'home' %}#home">Home</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'home' %}#services">
-                        Services
-                    </a>
+                    <a class="nav-link" href="{% url 'home' %}#services">Services</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'home' %}#projects">
-                        Projects
-                    </a>
+                    <a class="nav-link" href="{% url 'home' %}#projects">Projects</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'home' %}#about">
-                        About
-                    </a>
+                    <a class="nav-link" href="{% url 'home' %}#about">About</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'home' %}#contact">
-                        Contact
-                    </a>
+                    <a class="nav-link" href="{% url 'home' %}#contact">Contact</a>
                 </li>
-
             </ul>
-        </div>
 
+            <a class="scalla-nav-cta" href="{% url 'home' %}#contact">
+                Let's Talk <span aria-hidden="true">↗</span>
+            </a>
+
+        </div>
     </div>
 </nav>
