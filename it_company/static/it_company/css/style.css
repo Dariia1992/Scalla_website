@@ -2309,3 +2309,190 @@ body {
 #projects .card:hover {
     background: #ffffff;
 }
+
+
+
+/* SCALLA — smooth reveal animation */
+
+.scalla-reveal {
+    opacity: 0;
+    transform: translateY(26px);
+    transition:
+        opacity 0.85s ease,
+        transform 0.85s cubic-bezier(.22, 1, .36, 1);
+}
+
+.scalla-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .scalla-reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+
+
+
+
+/* =====================================
+   SCALLA — LET'S TALK
+===================================== */
+
+.scalla-talk {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1050;
+    display: flex;
+    align-items: center;
+    font-family: inherit;
+}
+
+/* Vertical tab */
+
+.scalla-talk-tab {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    background: #26382F;
+    color: #FFFFFF;
+    border: 1px solid #506558;
+    border-radius: 0 8px 8px 0;
+    padding: 22px 12px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    cursor: pointer;
+    transition: background .3s ease;
+}
+
+.scalla-talk-tab:hover {
+    background: #405849;
+}
+
+/* Sliding panel */
+
+.scalla-talk-panel {
+    width: 0;
+    padding: 0;
+    overflow: hidden;
+    background: #1B2922;
+    color: #FFFFFF;
+    border-radius: 12px 0 0 12px;
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        width .45s cubic-bezier(.22, 1, .36, 1),
+        opacity .3s ease,
+        visibility .3s ease;
+}
+
+.scalla-talk.is-open .scalla-talk-panel {
+    width: 310px;
+    padding: 30px;
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Close button */
+
+.scalla-talk-close {
+    float: right;
+    background: none;
+    border: 0;
+    color: #FFFFFF;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.scalla-talk-close:hover {
+    color: #A7BBAE;
+}
+
+/* Label */
+
+.scalla-talk-label {
+    display: block;
+    color: #A7BBAE;
+    font-size: 10px;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+}
+
+/* Heading */
+
+.scalla-talk-panel h3 {
+    color: #FFFFFF;
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 14px;
+}
+
+/* Description */
+
+.scalla-talk-panel p {
+    color: #C5D1C8;
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 24px;
+}
+
+/* Green Get in Touch button */
+
+.scalla-talk-link,
+.scalla-talk-link:visited {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+
+    background: #294B3B;
+    color: #FFFFFF;
+
+    padding: 13px 17px;
+    border: 1px solid #52705E;
+    border-radius: 5px;
+
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+
+    transition:
+        background .3s ease,
+        transform .3s ease;
+}
+
+.scalla-talk-link:hover {
+    background: #426451;
+    color: #FFFFFF;
+    transform: translateY(-2px);
+}
+
+/* Mobile */
+
+@media (max-width: 576px) {
+    .scalla-talk.is-open .scalla-talk-panel {
+        width: min(280px, calc(100vw - 55px));
+        padding: 22px;
+    }
+
+    .scalla-talk-tab {
+        padding: 15px 9px;
+        font-size: 10px;
+    }
+}
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+    .scalla-talk-panel,
+    .scalla-talk-tab,
+    .scalla-talk-link {
+        transition: none;
+    }
+}

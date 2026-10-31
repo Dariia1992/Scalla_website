@@ -23,6 +23,105 @@
     >
 </head>
 
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+   const elements = document.querySelectorAll(
+    "#services .card, " +
+    "#about h2, #about p"
+);
+
+    if (!("IntersectionObserver" in window) ||
+        window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        return;
+    }
+
+    elements.forEach((element, index) => {
+        element.classList.add("scalla-reveal");
+
+        if (element.matches(".card")) {
+            element.style.transitionDelay =
+                `${(index % 3) * 100}ms`;
+        }
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.08
+    });
+
+    elements.forEach(element => observer.observe(element));
+});
+</script>
+
+
+<!-- SCALLA Let's Talk -->
+<div class="scalla-talk" id="scallaTalk">
+
+    <div class="scalla-talk-panel" id="scallaTalkPanel">
+        <button class="scalla-talk-close"
+                type="button"
+                aria-label="Close contact panel">
+            &times;
+        </button>
+
+        <span class="scalla-talk-label">
+            SCALLA / CONTACT
+        </span>
+
+        <h3>Let's talk business.</h3>
+
+        <p>
+            Tell us what your business needs.
+            We'll help you find the right solution.
+        </p>
+
+        <a href="{% url 'home' %}#contact"
+           class="scalla-talk-link">
+            Get in touch <span aria-hidden="true">↗</span>
+        </a>
+    </div>
+
+    <button class="scalla-talk-tab"
+            type="button"
+            aria-expanded="false"
+            aria-controls="scallaTalkPanel">
+        LET'S TALK
+    </button>
+
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const talk = document.getElementById("scallaTalk");
+    const tab = talk.querySelector(".scalla-talk-tab");
+    const close = talk.querySelector(".scalla-talk-close");
+    const link = talk.querySelector(".scalla-talk-link");
+
+    function setOpen(open) {
+        talk.classList.toggle("is-open", open);
+        tab.setAttribute("aria-expanded", String(open));
+    }
+
+    tab.addEventListener("click", () => {
+        setOpen(!talk.classList.contains("is-open"));
+    });
+
+    close.addEventListener("click", () => setOpen(false));
+    link.addEventListener("click", () => setOpen(false));
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") setOpen(false);
+    });
+});
+</script>
+
 <body>
 
     {% include 'it_company/includes/navbar.html' %}
