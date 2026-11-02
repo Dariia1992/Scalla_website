@@ -123,6 +123,16 @@ STATIC_URL = 'static/'
 
 MAILERS = {
     'default': {
-        'BACKEND': 'django.core.mail.backends.console.EmailBackend',
+        'BACKEND': 'django.core.mail.backends.console.EmailBackend',#console
+        # 'BACKEND': 'django.core.mail.backends.smtp.EmailBackend',
+        # "OPTIONS": {
+        #     "host": "smtp.gmail.com",
+        #     "port": 587,
+        #     "use_tls": True,
+        #     "username": "yourname@outlook.com",
+        #     "timeout": 15,
+        # },
+        
     },
 }
+

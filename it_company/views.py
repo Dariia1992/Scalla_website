@@ -5,7 +5,7 @@ from django.contrib import messages
 
 from .models import Service, ContactRequest, Project
 from .forms import ContactRequestForm
-
+from django.core.mail import send_mail
 
 def home(request):
     services = Service.objects.filter(is_active=True)
@@ -16,6 +16,12 @@ def home(request):
 
         if form.is_valid():
             form.save()
+            send_mail(
+                subject = "Test title",
+                message = "Test message",
+                from_email = "yourname@outlook.com",
+                recipient_list = ["user@gmail.com"]
+            )
 
             messages.success(
                 request,
