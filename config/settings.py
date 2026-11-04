@@ -4,7 +4,6 @@ Django settings for SCALLA project.
 """
 
 import os
-import sys
 from pathlib import Path
 
 from dotenv import load_dotenv
@@ -13,15 +12,8 @@ from dotenv import load_dotenv
 # BASE DIRECTORY
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# Load environment variables
+# ENVIRONMENT VARIABLES
 load_dotenv(BASE_DIR / ".env")
-
-
-# SQLITE FOR CPANEL (LINUX)
-# Use newer SQLite on Linux hosting.
-if sys.platform == "linux":
-    import pysqlite3
-    sys.modules["sqlite3"] = pysqlite3
 
 
 # SECURITY
@@ -79,7 +71,7 @@ TEMPLATES = [
             "context_processors": [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
-                "django.contrib.messages.context_processors.messages",                
+                "django.contrib.messages.context_processors.messages",
             ],
         },
     },
@@ -87,12 +79,37 @@ TEMPLATES = [
 
 
 # DATABASE
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+# SQLite locally, MySQL on cPanel.
+
+DB_ENGINE = os.getenv("DB_ENGINE", "sqlite").lower()
+
+if DB_ENGINE == "mysql":
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.mysql",
+            "NAME": os.getenv("DB_NAME"),
+            "USER": os.getenv("DB_USER"),
+            "PASSWORD": os.getenv("DB_PASSWORD"),
+            "HOST": os.getenv("DB_HOST", "localhost"),
+            "PORT": os.getenv("DB_PORT", "3306"),
+            "OPTIONS": {
+                "charset": "utf8mb4",
+            },
+        }
     }
-}
+
+elif DB_ENGINE == "sqlite":
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": BASE_DIR / "db.sqlite3",
+        }
+    }
+
+else:
+    raise RuntimeError(
+        f"Unsupported DB_ENGINE: {DB_ENGINE}"
+    )
 
 
 # PASSWORD VALIDATION
@@ -130,20 +147,29 @@ MEDIA_ROOT = BASE_DIR / "media"
 
 
 # EMAIL
-# Console backend for testing.
-# Configure SMTP later for production.
-EMAIL_BACKEND = os.environ.get(
+# Console backend for local testing.
+# SMTP settings are loaded from .env in production.
+
+EMAIL_BACKEND = os.getenv(
     "DJANGO_EMAIL_BACKEND",
     "django.core.mail.backends.console.EmailBackend",
 )
 
-DEFAULT_FROM_EMAIL = os.environ.get(
+DEFAULT_FROM_EMAIL = os.getenv(
     "DJANGO_DEFAULT_FROM_EMAIL",
     "noreply@scalla.net",
 )
 
-EMAIL_HOST = os.environ.get("EMAIL_HOST", "")
-EMAIL_PORT = int(os.environ.get("EMAIL_PORT", "587"))
-EMAIL_USE_TLS = os.environ.get("EMAIL_USE_TLS", "True").lower() == "true"
-EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER", "")
-EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD", "")
+EMAIL_HOST = os.getenv("EMAIL_HOST", "")
+EMAIL_PORT = int(os.getenv("EMAIL_PORT", "587"))
+
+EMAIL_USE_TLS = (
+    os.getenv("EMAIL_USE_TLS", "True").lower() == "true"
+)
+
+EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER", "")
+EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD", "")
+
+
+# DEFAULT PRIMARY KEY
+DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"

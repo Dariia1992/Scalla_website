@@ -1,13 +1,7 @@
 asgiref==3.13.0
-
 Django==6.1.2
-
 pillow==13.0.0
-
 python-dotenv==1.2.4
-
 sqlparse==0.6.0
-
 tzdata==2026.6
-
-pysqlite3-binary==0.5.4.post2; sys_platform == "linux"
+mysqlclient==2.3.0; sys_platform == "linux"
