@@ -18,7 +18,13 @@ def home(request):
             form.save()
             send_mail(
                 subject = "Test title",
-                message = "Test message",
+                message = f"""
+                name = {form.cleaned_data["name"]}
+                email = {form.cleaned_data["email"]}
+                phone = {form.cleaned_data["phone"]}
+                message = {form.cleaned_data["message"]}
+                """,
+                
                 from_email = "yourname@outlook.com",
                 recipient_list = ["user@gmail.com"]
             )
